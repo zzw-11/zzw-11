@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Photo Wall</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .photo-wall {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            width: 90vw;
+            height: 90vh;
+            overflow-y: hidden;
+            position: relative;
+            animation: wallAnimation 10s infinite alternate;
+        }
+
+        .photo {
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s, box-shadow 0.5s, border 0.5s;
+            border: 2px solid transparent;
+            animation: photoAnimation 5s infinite alternate;
+        }
+
+        .photo:hover {
+            transform: scale(1.1) rotateZ(10deg);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+            border: 2px solid #fff;
+            animation: hoverAnimation 1s infinite;
+        }
+
+        .f1, .f2, .f3 {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.5s, box-shadow 0.5s, border 0.5s;
+            animation: photoFade 3s infinite alternate;
+        }
+
+        .f1:hover, .f2:hover, .f3:hover {
+            transform: scale(1.1) rotateZ(10deg);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+            border: 2px solid #fff;
+            animation: hoverScale 0.5s infinite;
+        }
+
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('path/to/starfield.jpg') repeat;
+            opacity: 0.2;
+            animation: moveBackground 60s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            from { background-position: 0 0; }
+            to { background-position: 10000px 10000px; }
+        }
+
+        @keyframes wallAnimation {
+            0% { transform: scale(1) rotateY(0deg); }
+            50% { transform: scale(1.1) rotateY(10deg); }
+            100% { transform: scale(1) rotateY(0deg); }
+        }
+
+        @keyframes photoAnimation {
+            0% { filter: brightness(1); }
+            50% { filter: brightness(1.2); }
+            100% { filter: brightness(1); }
+        }
+
+        @keyframes hoverAnimation {
+            0% { transform: scale(1.1) rotateZ(10deg); }
+            50% { transform: scale(1.15) rotateZ(15deg); }
+            100% { transform: scale(1.1) rotateZ(10deg); }
+        }
+
+        @keyframes photoFade {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes hoverScale {
+            0% { transform: scale(1.1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1.1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="photo-wall" id="photoWall">
+        <!-- 引入图片 -->
+            <img class="f1" src="img/12.jpeg" />
+            <img class="f1" src="img/13.jpeg" />
+            <img class="f1" src="img/14.jpeg" />
+            <img class="f1" src="img/15.jpeg" />
+            <img class="f1" src="img/16.jpeg" />
+            <img class="f1" src="img/1.jpeg" />
+            <img class="f1" src="img/2.jpeg" />
+            <img class="f1" src="img/3.jpeg" />
+            <img class="f1" src="img/4.jpeg" />
+            <img class="f1" src="img/5.jpeg" />
+            <img class="f1" src="img/6.jpeg" />
+            <img class="f1" src="img/7.jpeg" />
+            <img class="f1" src="img/5.jpeg" />
+            <img class="f1" src="img/6.jpeg" />
+            <img class="f1" src="img/7.jpeg" />
+            <img class="f1" src="img/8.jpeg" />
+            <img class="f1" src="img/9.jpeg" />
+            <img class="f1" src="img/10.jpeg" />
+            <img class="f1" src="img/11.jpeg" />
+            <img class="f1" src="img/17.jpeg" />
+            <img class="f1" src="img/18.jpeg" />
+            <img class="f1" src="img/19.jpeg" />
+            <img class="f1" src="img/20.jpeg" />
+            <img class="f1" src="img/21.jpeg" />
+            <img class="f1" src="img/22.jpeg" />
+            <img class="f1" src="img/23.jpeg" />
+            <img class="f1" src="img/24.jpeg" />
+            <img class="f2" src="img/19.jpeg" />
+            <img class="f2" src="img/20.jpeg" />
+            <img class="f2" src="img/21.jpeg" />
+            <img class="f2" src="img/22.jpeg" />
+            <img class="f2" src="img/23.jpeg" />
+            <img class="f2" src="img/24.jpeg" />
+            <img class="f2" src="img/1.jpeg" />
+            <img class="f2" src="img/2.jpeg" />
+            <img class="f2" src="img/3.jpeg" />
+            <img class="f2" src="img/4.jpeg" />
+            <img class="f2" src="img/5.jpeg" />
+            <img class="f2" src="img/9.jpeg" />
+            <img class="f2" src="img/10.jpeg" />
+            <img class="f2" src="img/11.jpeg" />
+            <img class="f2" src="img/12.jpeg" />
+            <img class="f2" src="img/13.jpeg" />
+            <img class="f2" src="img/14.jpeg" />
+            <img class="f2" src="img/15.jpeg" />
+            <img class="f2" src="img/16.jpeg" />
+            <img class="f2" src="img/17.jpeg" />
+            <img class="f2" src="img/18.jpeg" />
+            <img class="f2" src="img/6.jpeg" />
+            <img class="f2" src="img/7.jpeg" />
+            <img class="f2" src="img/5.jpeg" />
+            <img class="f2" src="img/6.jpeg" />
+            <img class="f2" src="img/7.jpeg" />
+            <img class="f2" src="img/8.jpeg" />
+            <img class="f3" src="img/1.jpeg" />
+            <img class="f3" src="img/2.jpeg" />
+            <img class="f3" src="img/11.jpeg" />
+            <img class="f3" src="img/12.jpeg" />
+            <img class="f3" src="img/3.jpeg" />
+            <img class="f3" src="img/4.jpeg" />
+            <img class="f3" src="img/5.jpeg" />
+            <img class="f3" src="img/16.jpeg" />
+            <img class="f3" src="img/17.jpeg" />
+            <img class="f3" src="img/18.jpeg" />
+            <img class="f3" src="img/10.jpeg" />
+            <img class="f3" src="img/13.jpeg" />
+            <img class="f3" src="img/19.jpeg" />
+            <img class="f3" src="img/20.jpeg" />
+            <img class="f3" src="img/21.jpeg" />
+            <img class="f3" src="img/22.jpeg" />
+            <img class="f3" src="img/23.jpeg" />
+            <img class="f3" src="img/24.jpeg" />
+            <img class="f3" src="img/9.jpeg" />
+            <img class="f3" src="img/14.jpeg" />
+            <img class="f3" src="img/15.jpeg" />
+            <img class="f3" src="img/6.jpeg" />
+            <img class="f3" src="img/7.jpeg" />
+            <img class="f3" src="img/5.jpeg" />
+            <img class="f3" src="img/6.jpeg" />
+            <img class="f3" src="img/7.jpeg" />
+            <img class="f3" src="img/8.jpeg" />
+            <p></p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const photoWall = document.getElementById('photoWall');
+
+            // 自动滚动动画
+            let scrollStep = 1;
+            let scrollInterval = 20;
+            let direction = 1; // 1 for down, -1 for up
+
+            const autoScroll = () => {
+                photoWall.scrollBy(0, scrollStep * direction);
+                if (photoWall.scrollTop + photoWall.clientHeight >= photoWall.scrollHeight || photoWall.scrollTop === 0) {
+                    direction *= -1; // Reverse direction
+                }
+            };
+
+            setInterval(autoScroll, scrollInterval);
+
+            // 图片悬停效果
+            const photos = document.querySelectorAll('.f1, .f2, .f3');
+            photos.forEach(photo => {
+                photo.addEventListener('mouseover', () => {
+                    photo.style.transition = 'transform 0.5s, box-shadow 0.5s, border 0.5s';
+                });
+                photo.addEventListener('mouseout', () => {
+                    photo.style.transition = 'transform 1s, box-shadow 1s, border 1s';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
